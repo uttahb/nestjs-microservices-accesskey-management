@@ -7,5 +7,5 @@ export abstract class IGenericRepository<T> {
 
   abstract update(id: string, item: T): Promise<T>;
 
-  abstract delete(id: string): Promise<T>;
+  abstract delete(id: string): Promise<boolean>;
 }

@@ -18,7 +18,7 @@ export class AccessKeyUseCases {
   getAccessKeybyId(id: any): Promise<AccessKeyInfo> {
     return this.dataServices.accessKeyInfo.get(id);
   }
-  deleteAccessKeybyId(id: any): Promise<AccessKeyInfo> {
+  deleteAccessKeybyId(id: any): Promise<boolean> {
     return this.dataServices.accessKeyInfo.delete(id);
   }
   createAccessKey(

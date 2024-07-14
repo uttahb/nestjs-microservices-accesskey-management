@@ -20,8 +20,14 @@ export class MongoGenericRepository<T> implements IGenericRepository<T> {
       .populate(this._populateOnFind)
       .exec() as Promise<T>;
   }
-  delete(id: string): Promise<T> {
-    return this._repository.findByIdAndDelete(id).exec() as Promise<T>;
+  delete(id: string): Promise<boolean> {
+    try {
+      this._repository.findByIdAndDelete(id).exec();
+      return Promise.resolve(true);
+    } catch (error) {
+      console.log(error);
+      return Promise.resolve(false);
+    }
   }
   create(item: T): Promise<T> {
     return this._repository.create(item);

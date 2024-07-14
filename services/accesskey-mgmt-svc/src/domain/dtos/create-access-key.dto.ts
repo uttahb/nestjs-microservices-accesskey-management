@@ -20,6 +20,6 @@ export class CreateAccessKeyDto {
 }
 
 export class UpdateAccessKeyDto extends PartialType(CreateAccessKeyDto) {
-  _id: string;
-  isActive: boolean;
+  _id?: string;
+  isActive?: boolean;
 }
