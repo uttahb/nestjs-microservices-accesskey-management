@@ -1,0 +1,86 @@
+version: "3.1"
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: "rabbitmq"
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    # networks:
+    #     - rabbitmq_go_net
+
+  # accesskeymgmtservice:
+  #   build:
+  #     context: ./services/accesskey-mgmt-svc
+  #     dockerfile: Dockerfile.dev
+  #   # volumes:
+  #   #   - ./accesskeyMgmtService:/app
+  #   #   - /app/node_modules
+  #   depends_on:
+  #     mongo:
+  #       condition: service_started
+  #     rabbitmq:
+  #       condition: service_started
+  #   environment:
+  #     - NODE_ENV=development
+  #   command: npm run start:dev
+
+  # web3tokeninfoservice:
+  #   build:
+  #     context: ./services/web3-token-info-svc
+  #     dockerfile: Dockerfile.dev
+  #   # volumes:
+  #   #   - ./web3TokenInfoService:/app
+  #   #   - /app/node_modules
+  #   depends_on:
+  #     mongo:
+  #       condition: service_started
+  #     rabbitmq:
+  #       condition: service_started
+  #   environment:
+  #     - NODE_ENV=development
+  #     - MONGO_CONNECTION_STRING=mongodb://root:example@mongo:27017/
+  #   command: npm run start:dev
+
+  # dummygatewayservice:
+  #   build:
+  #     context: ./services/dummy-gateway
+  #     dockerfile: Dockerfile.dev
+  #   # volumes:
+  #   #   - ./dummyGatewayService:/app
+  #   #   - /app/node_modules
+  #   depends_on:
+  #     rabbitmq:
+  #       condition: service_started
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - NODE_ENV=development
+  #   command: npm run start:dev
+ 
+
+# networks:
+#   rabbitmq_go_net:
+#     driver: bridge
