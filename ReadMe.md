@@ -31,6 +31,7 @@
 - from the generateAccesskey response take the \_id and pass it along X-API-KEY header in fetchweb3tokens api.
 - Just call the fetchweb3tokens multiple times and to reach the limit and see if it throws the error and check the logs.
 - admin apis route starts with 'admin/access-key' and user apis routes start from '/'
+- To run tests run `npm run test`
 
 ## Architecture
 
