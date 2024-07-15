@@ -32,20 +32,6 @@
 - Just call the fetchweb3tokens multiple times and to reach the limit and see if it throws the error and check the logs.
 - admin apis route starts with 'admin/access-key' and user apis routes start from '/'
 
-## Todos
-
-- Token expiry check - done
-- Exception handling - done in gateway
-- Tests for sample
-- Architecture optimisation for web3 service - done
-- hardcode a valid output for the token info service
-- Author and book check - done
-- Add repository and service module for fetching web3 token - done
-- Logger
-- remove unwanted console logs
-- Improve documentation
-- Readme of architecture
-
 ## Architecture
 
 - Follows clean architecture
