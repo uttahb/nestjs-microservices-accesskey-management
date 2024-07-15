@@ -14,7 +14,7 @@ import { HttpExceptionFilter } from './http-exception.filter';
         name: 'ACCESSKEY_MGMT_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          urls: ['amqp://mongo:5672'],
           queue: 'accesskey_mgmt_queue',
           queueOptions: {
             durable: false,
@@ -25,7 +25,7 @@ import { HttpExceptionFilter } from './http-exception.filter';
         name: 'WEB3_TOKEN_INFO_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          urls: ['amqp://mongo:5672'],
           queue: 'web3token_info_queue',
           queueOptions: {
             durable: false,

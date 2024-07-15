@@ -9,7 +9,7 @@ async function bootstrap() {
     {
       transport: Transport.RMQ,
       options: {
-        urls: ['amqp://localhost:5672'],
+        urls: ['amqp://mongo:5672'],
         queue: 'accesskey_mgmt_queue',
         queueOptions: {
           durable: false,

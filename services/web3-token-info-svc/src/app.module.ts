@@ -28,7 +28,7 @@ import { Web3TokenUseCases } from './use-cases/web3token/web3token.use-case';
         name: 'ACCESSKEY_MGMT_SERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          urls: ['amqp://mongo:5672'],
           queue: 'accesskey_mgmt_queue',
           queueOptions: {
             durable: false,

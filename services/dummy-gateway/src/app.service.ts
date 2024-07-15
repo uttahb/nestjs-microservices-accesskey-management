@@ -10,20 +10,17 @@ export class AppService {
     @Inject('WEB3_TOKEN_INFO_SERVICE') private web3tokenInfoClient: ClientProxy,
   ) {}
   generateAccessKey(accessKeyData: CreateAccessKeyDto) {
-    console.log('access key data ', accessKeyData);
     return this.accessKeyMgmtClient
       .send({ cmd: 'create-access-key' }, accessKeyData)
       .pipe(timeout(5000));
   }
   updateAccessKey(accessKeyData: UpdateAccessKeyDto) {
-    console.log('access key data ', accessKeyData);
     return this.accessKeyMgmtClient
       .send({ cmd: 'update-access-key' }, accessKeyData)
       .pipe(timeout(5000));
   }
 
   deleteAccessKey(id: string) {
-    console.log('access key data ', id);
     return this.accessKeyMgmtClient
       .send({ cmd: 'delete-access-key' }, id)
       .pipe(timeout(5000));

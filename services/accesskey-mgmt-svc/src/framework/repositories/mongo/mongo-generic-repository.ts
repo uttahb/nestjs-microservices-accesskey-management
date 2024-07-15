@@ -25,7 +25,6 @@ export class MongoGenericRepository<T> implements IGenericRepository<T> {
       this._repository.findByIdAndDelete(id).exec();
       return Promise.resolve(true);
     } catch (error) {
-      console.log(error);
       return Promise.resolve(false);
     }
   }

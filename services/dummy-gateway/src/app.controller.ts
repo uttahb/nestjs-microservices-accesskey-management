@@ -16,7 +16,6 @@ export class AppController {
 
   @Post()
   async generateAccessKey(@Body() accessKeyData: CreateAccessKeyDto) {
-    console.log(accessKeyData.expiresAfter);
     return this.appService.generateAccessKey(accessKeyData);
   }
   @Put(':id')
@@ -25,7 +24,6 @@ export class AppController {
     @Body() accessKeyData: UpdateAccessKeyDto,
   ) {
     accessKeyData._id = id;
-    console.log(accessKeyData.expiresAfter);
     return this.appService.updateAccessKey(accessKeyData);
   }
 

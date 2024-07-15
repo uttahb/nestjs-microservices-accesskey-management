@@ -13,10 +13,8 @@ export class AccessKeyMgmtService
     private accessKeyInfoRepository: ClientProxy,
   ) {}
   onApplicationBootstrap() {
-    console.log('onApplicationBootstrap');
     this.accessKeyInfo = new AccessKeyMgmtGenericRepository<AccessKeyInfo>(
       this.accessKeyInfoRepository,
     );
-    console.log(this.accessKeyInfo.getAccessKeyData);
   }
 }

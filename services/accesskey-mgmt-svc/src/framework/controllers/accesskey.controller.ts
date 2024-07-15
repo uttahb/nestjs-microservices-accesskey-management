@@ -14,19 +14,16 @@ export class AccessKeyController {
 
   @MessagePattern({ cmd: 'get-access-key-info-by-id' })
   async getById(@Payload() id: string) {
-    console.log('id is ', id);
     return this.accessKeyUsecases.getAccessKeybyId(id);
   }
 
   @MessagePattern({ cmd: 'delete-access-key' })
   async deleteById(@Payload() id: string) {
-    console.log(id);
     return this.accessKeyUsecases.deleteAccessKeybyId(id);
   }
 
   @MessagePattern({ cmd: 'create-access-key' })
   createAccessKey(@Payload() accessKeyDto: CreateAccessKeyDto) {
-    console.log(accessKeyDto);
     return this.accessKeyUsecases.createAccessKey(accessKeyDto);
   }
 
