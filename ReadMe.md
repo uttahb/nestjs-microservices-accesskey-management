@@ -54,6 +54,6 @@
 
 - Its said that admin auth happens with JWT, and was asked to not do any auth. So confused whether to write any dummy guards. I haven't wrote any.
 
--Its asked to not have any http/grpc request between microservice, but to preserve data ownership between services(as per standard SOA way of doing things), I used rpc call from web3 token service to access key service.
+- Its asked to not have any http/grpc request between microservice, but to preserve data ownership between services(as per standard SOA way of doing things), I used rpc call from web3 token service to access key service.
 
--Its asked to follow rest api principles but the task didn't asked to write rest apis but instead event stream based services.
+- Its asked to follow rest api principles but the task didn't asked to write rest apis but instead event stream based services.
