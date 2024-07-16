@@ -41,6 +41,7 @@
 - There is abstracts for repositories, so that its easy to change the data source (may be change the db or change the service if needed)
 - its easy to test as well, since easy to mock the repositories based on the abstracts.
 - SOLID principles are followed
+- Used exception filters globally across the app to catch any exceptions and transform to user friendly messages.
 
 ## Disclaimer
 
